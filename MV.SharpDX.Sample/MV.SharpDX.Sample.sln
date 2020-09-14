@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1082
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MV.SharpDX.Sample", "MV.SharpDX.Sample.csproj", "{A74DF50B-8E17-4968-BC3D-DDF70ACF7713}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A74DF50B-8E17-4968-BC3D-DDF70ACF7713}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A74DF50B-8E17-4968-BC3D-DDF70ACF7713}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A74DF50B-8E17-4968-BC3D-DDF70ACF7713}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A74DF50B-8E17-4968-BC3D-DDF70ACF7713}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8B0DC28B-3329-4A50-AC1E-6480A1642735}
+	EndGlobalSection
+EndGlobal
