@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{619948A9-D4E6-49A2-9DA8-3E1AEC318055}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MV.WinForms.PlayerSimple</RootNamespace>
+    <AssemblyName>MV.WinForms.PlayerSimple</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MV.WinForms.MVPlayer">
+      <HintPath>..\..\Dependencies\MV.WinForms.MVPlayer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\WinFormsSource\Form1.cs">
+      <Link>Form1.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\WinFormsSource\Form1.designer.cs">
+      <Link>Form1.designer.cs</Link>
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\WinFormsSource\Program.cs">
+      <Link>Program.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="..\..\WinFormsSource\Form1.resx">
+      <Link>Form1.resx</Link>
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Dependencies\Native\Dll\x86\avcodec-58.dll">
+      <Link>MVLib\x86\avcodec-58.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\Dependencies\Native\Dll\x86\avdevice-58.dll">
+      <Link>MVLib\x86\avdevice-58.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\Dependencies\Native\Dll\x86\avfilter-7.dll">
+      <Link>MVLib\x86\avfilter-7.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\Dependencies\Native\Dll\x86\avformat-58.dll">
+      <Link>MVLib\x86\avformat-58.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\Dependencies\Native\Dll\x86\avutil-56.dll">
+      <Link>MVLib\x86\avutil-56.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\Dependencies\Native\Dll\x86\MV.DotNet.MVLib.dll">
+      <Link>MVLib\x86\MV.DotNet.MVLib.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\Dependencies\Native\Dll\x86\MVLib.dll">
+      <Link>MVLib\x86\MVLib.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\Dependencies\Native\Dll\x86\OpenAL32.dll">
+      <Link>MVLib\x86\OpenAL32.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\Dependencies\Native\Dll\x86\postproc-55.dll">
+      <Link>MVLib\x86\postproc-55.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\Dependencies\Native\Dll\x86\SDL2.dll">
+      <Link>MVLib\x86\SDL2.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\Dependencies\Native\Dll\x86\swresample-3.dll">
+      <Link>MVLib\x86\swresample-3.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\Dependencies\Native\Dll\x86\swscale-5.dll">
+      <Link>MVLib\x86\swscale-5.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\Dependencies\Native\Dll\x86\wrap_oal.dll">
+      <Link>MVLib\x86\wrap_oal.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Dependencies\Native\Dll\x64\avcodec-58.dll">
+      <Link>MVLib\x64\avcodec-58.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\Dependencies\Native\Dll\x64\avdevice-58.dll">
+      <Link>MVLib\x64\avdevice-58.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\Dependencies\Native\Dll\x64\avfilter-7.dll">
+      <Link>MVLib\x64\avfilter-7.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\Dependencies\Native\Dll\x64\avformat-58.dll">
+      <Link>MVLib\x64\avformat-58.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\Dependencies\Native\Dll\x64\avutil-56.dll">
+      <Link>MVLib\x64\avutil-56.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\Dependencies\Native\Dll\x64\MV.DotNet.MVLib.dll">
+      <Link>MVLib\x64\MV.DotNet.MVLib.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\Dependencies\Native\Dll\x64\MVLib.dll">
+      <Link>MVLib\x64\MVLib.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\Dependencies\Native\Dll\x64\OpenAL32.dll">
+      <Link>MVLib\x64\OpenAL32.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\Dependencies\Native\Dll\x64\postproc-55.dll">
+      <Link>MVLib\x64\postproc-55.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\Dependencies\Native\Dll\x64\SDL2.dll">
+      <Link>MVLib\x64\SDL2.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\Dependencies\Native\Dll\x64\swresample-3.dll">
+      <Link>MVLib\x64\swresample-3.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\Dependencies\Native\Dll\x64\swscale-5.dll">
+      <Link>MVLib\x64\swscale-5.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\Dependencies\Native\Dll\x64\wrap_oal.dll">
+      <Link>MVLib\x64\wrap_oal.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Dependencies\Native\Dll\x64\libfreetype-6.dll">
+      <Link>MVLib\x64\libfreetype-6.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\Dependencies\Native\Dll\x64\SDL2_ttf.dll">
+      <Link>MVLib\x64\SDL2_ttf.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\Dependencies\Native\Dll\x64\zlib1.dll">
+      <Link>MVLib\x64\zlib1.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\Dependencies\Native\Dll\x86\libfreetype-6.dll">
+      <Link>MVLib\x86\libfreetype-6.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\Dependencies\Native\Dll\x86\SDL2_ttf.dll">
+      <Link>MVLib\x86\SDL2_ttf.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\Dependencies\Native\Dll\x86\zlib1.dll">
+      <Link>MVLib\x86\zlib1.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
