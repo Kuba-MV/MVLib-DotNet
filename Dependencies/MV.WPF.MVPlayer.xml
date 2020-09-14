@@ -1,0 +1,438 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MV.WPF.MVPlayer</name>
+    </assembly>
+    <members>
+        <member name="T:MV.DotNet.Common.MV_DecodingTypeEnum">
+            <summary>
+            Media Vault decoding type available options.\n
+            Please read enum notes for details.\n
+            </summary>
+        </member>
+        <member name="F:MV.DotNet.Common.MV_DecodingTypeEnum.MV_Auto">
+            <summary>
+            MV Engine will choose best decoding type automatically.
+            </summary>
+        </member>
+        <member name="F:MV.DotNet.Common.MV_DecodingTypeEnum.MV_YUV420P">
+            <summary>
+            Video frame is decoded into YUV420P format. This is software decoding type.
+            </summary>
+        </member>
+        <member name="F:MV.DotNet.Common.MV_DecodingTypeEnum.MV_RGBA">
+            <summary>
+            Video frame is decoded and converted into RGBA format. This is software decoding type.
+            </summary>
+        </member>
+        <member name="F:MV.DotNet.Common.MV_DecodingTypeEnum.MV_DXVA">
+            <summary>
+            Video frame is decoded via DXVA 2.0 hardware accelerator. This is hardware decoding type.
+            </summary>
+        </member>
+        <member name="F:MV.DotNet.Common.MV_DecodingTypeEnum.MV_D3D11VA">
+            <summary>
+            Video frame is decoded via DXVA11 hardware accelerator. This is hardware decoding type.
+            </summary>
+        </member>
+        <member name="T:MV.DotNet.Common.MV_Manager">
+            <summary>
+            MV_Manager is singleton class.\n
+            Use it to initialize Media Vault subsystem.\n
+            Should be used at application start (initialize) and application finish (dispose resources).\n
+            </summary>
+        </member>
+        <member name="P:MV.DotNet.Common.MV_Manager.IsInitialized">
+            <summary>
+            Get information if Media Vault engine is already initialized.
+            </summary>
+        </member>
+        <member name="M:MV.DotNet.Common.MV_Manager.InitializeMediaVault">
+            <summary>
+            Initialize Media Vault Engine and loads all necessary dependencies.\n
+            It should be called once at application start.\n
+            You must call this method before using any Media Vault controls.\n
+            Preferable it should be called before any user interface object will be created.\n
+            </summary>
+        </member>
+        <member name="M:MV.DotNet.Common.MV_Manager.CloseMediaVault">
+            <summary>
+            Close Media Vault Engine and release all allocated resources.\n
+            It should be called once on application exit\n
+            </summary>
+        </member>
+        <member name="M:MV.DotNet.Common.MV_Manager.InitializeLog(System.String)">
+            <summary>
+            Initialize debug log with providen path.
+            </summary>
+            <param name="path"></param>
+        </member>
+        <member name="M:MV.DotNet.Common.MV_Manager.DisposeLog">
+            <summary>
+            Release log.
+            </summary>
+        </member>
+        <member name="T:MV.DotNet.Common.MV_MediaPositionChangedEventArgs">
+            <summary>
+            Position changed event arguemnts.
+            </summary>
+        </member>
+        <member name="P:MV.DotNet.Common.MV_MediaPositionChangedEventArgs.Position">
+            <summary>
+            Gets current position in seconds.
+            </summary>
+        </member>
+        <member name="T:MV.DotNet.Common.MV_MediaStateChangedEventArgs">
+            <summary>
+            Media state changed event arguemnts.
+            </summary>
+        </member>
+        <member name="P:MV.DotNet.Common.MV_MediaStateChangedEventArgs.State">
+            <summary>
+            Gets current state of media player.
+            </summary>
+        </member>
+        <member name="T:MV.DotNet.Common.MV_PlayerStateEnum">
+            <summary>
+            Possible player states enumeration.
+            </summary>
+        </member>
+        <member name="F:MV.DotNet.Common.MV_PlayerStateEnum.NotInitialized">
+            <summary>
+            Initial player state.
+            </summary>
+        </member>
+        <member name="F:MV.DotNet.Common.MV_PlayerStateEnum.Paused">
+            <summary>
+            Player has loaded source and is paused.
+            </summary>
+        </member>
+        <member name="F:MV.DotNet.Common.MV_PlayerStateEnum.Closed">
+            <summary>
+            Player released media resources and is in closed states.
+            </summary>
+        </member>
+        <member name="F:MV.DotNet.Common.MV_PlayerStateEnum.Error">
+            <summary>
+            Player is in fault state. See log for details.
+            </summary>
+        </member>
+        <member name="F:MV.DotNet.Common.MV_PlayerStateEnum.Playing">
+            <summary>
+            Player is playing media.
+            </summary>
+        </member>
+        <member name="F:MV.DotNet.Common.MV_PlayerStateEnum.Seeking">
+            <summary>
+            Player currently is during seeking operation.
+            </summary>
+        </member>
+        <member name="F:MV.DotNet.Common.MV_PlayerStateEnum.Stopped">
+            <summary>
+            Player is stopped.
+            </summary>
+        </member>
+        <member name="F:MV.DotNet.Common.MV_PlayerStateEnum.Loading">
+            <summary>
+            Player is during loading source. Source is not ready at this stage.
+            </summary>
+        </member>
+        <member name="F:MV.DotNet.Common.MV_PlayerStateEnum.Finished">
+            <summary>
+            Player finished playing media stream stream.
+            </summary>
+        </member>
+        <member name="T:MV.DotNet.Common.MV_RenderMode">
+            <summary>
+            Enumeration defines render mode for Media Vault Library
+            </summary>
+        </member>
+        <member name="F:MV.DotNet.Common.MV_RenderMode.Composition">
+            <summary>
+            Player is bounded to display vsync and frame alignment is on.\n
+            Expected screen redraw is equal to display refresh rate.\n
+            This mode gives best playback quality, but has a little performance impact.\n
+            </summary>
+        </member>
+        <member name="F:MV.DotNet.Common.MV_RenderMode.Immediate">
+            <summary>
+            Player is not bounded to any vsync composition or game loop.\n
+            There is no any frame alignment and playback is based only on decoded position time stamps.\n
+            This mode requires screen redraw only when new video frame is available.\n
+            It has better performance but there is a little video playback quality penalty.\n
+            </summary>
+        </member>
+        <member name="T:MV.DotNet.Common.MV_SizeMode">
+            <summary>
+            Video frame size mode enumeration.
+            </summary>
+        </member>
+        <member name="F:MV.DotNet.Common.MV_SizeMode.Stretch">
+            <summary>
+            Picture fits container size.
+            </summary>
+        </member>
+        <member name="F:MV.DotNet.Common.MV_SizeMode.AspectRatio">
+            <summary>
+            Picture fits container size but keeps aspect ratio.
+            </summary>
+        </member>
+        <member name="F:MV.DotNet.Common.MV_SizeMode.Natural">
+            <summary>
+            Picture is displayed in natural size ignoring container size.
+            </summary>
+        </member>
+        <member name="T:MV.DotNet.Common.MV_SubtitleLine">
+            <summary>
+            Descirbes subtitle line
+            </summary>
+        </member>
+        <member name="P:MV.DotNet.Common.MV_SubtitleLine.Line">
+            <summary>
+            UTF8 string with subtitle line
+            </summary>
+        </member>
+        <member name="P:MV.DotNet.Common.MV_SubtitleLine.isBold">
+            <summary>
+            Format marker if text should be bolded
+            </summary>
+        </member>
+        <member name="P:MV.DotNet.Common.MV_SubtitleLine.isItalic">
+            <summary>
+            Format marker if text should be italic
+            </summary>
+        </member>
+        <member name="T:MV.DotNet.Common.MV_SubtitleLines">
+            <summary>
+            Collection of subtitle items
+            </summary>
+        </member>
+        <member name="T:MV.DotNet.Common.MV_SubtitleEventArgs">
+            <summary>
+            Subtitles event arguments
+            </summary>
+        </member>
+        <member name="P:MV.DotNet.Common.MV_SubtitleEventArgs.IsNew">
+            <summary>
+            True if subtitle items are new set of text
+            </summary>
+        </member>
+        <member name="P:MV.DotNet.Common.MV_SubtitleEventArgs.IsEmpty">
+            <summary>
+            True when there is not text in subtitle item
+            </summary>
+        </member>
+        <member name="P:MV.DotNet.Common.MV_SubtitleEventArgs.Lines">
+            <summary>
+            Collection of subtitle lines
+            </summary>
+        </member>
+        <member name="T:MV.DotNet.WPF.MVPlayer.MVPlayer">
+            <summary>
+            Media Vault Library Control for WPF
+            </summary>
+            <summary>
+            MVPlayer
+            </summary>
+        </member>
+        <member name="M:MV.DotNet.WPF.MVPlayer.MVPlayer.#ctor">
+            <summary>
+            Creates new instance of Media Vault Library Control for WPF
+            </summary>
+        </member>
+        <member name="T:MV.DotNet.WPF.MVPlayer.MVPlayer.MediaStateChangedeHandler">
+            <summary>
+            Media state change handler.
+            </summary>
+            <param name="sender">Delegate sender.</param>
+            <param name="e">State changed arguments.</param>
+        </member>
+        <member name="E:MV.DotNet.WPF.MVPlayer.MVPlayer.MediaStateChanged">
+            <summary>
+            Event is fired when player state will change.
+            </summary>
+        </member>
+        <member name="T:MV.DotNet.WPF.MVPlayer.MVPlayer.MediaPositionChangedeHandler">
+            <summary>
+            Position changed handler.
+            </summary>
+            <param name="sender">Delegate sender.</param>
+            <param name="e">Current position arguments.</param>
+        </member>
+        <member name="E:MV.DotNet.WPF.MVPlayer.MVPlayer.MediaPositionChanged">
+            <summary>
+            Event is fired when position of media will change.
+            </summary>
+        </member>
+        <member name="T:MV.DotNet.WPF.MVPlayer.MVPlayer.SubtitleChangedHandler">
+            <summary>
+            Subtitle changed handler.
+            </summary>
+            <param name="sender">Delegate sender</param>
+            <param name="e">Subtitle data</param>
+        </member>
+        <member name="E:MV.DotNet.WPF.MVPlayer.MVPlayer.SubtitleChanged">
+            <summary>
+            Fired when subtitle changed
+            </summary>
+        </member>
+        <member name="P:MV.DotNet.WPF.MVPlayer.MVPlayer.ShowFPS">
+            <summary>
+            Gets or sets video size mode.
+            </summary>
+        </member>
+        <member name="P:MV.DotNet.WPF.MVPlayer.MVPlayer.Volume">
+            <summary>
+            Set volume of media stream.\n
+            Value must be in range from 0.0 to 1.0.\n
+            This is dependency property.
+            </summary>
+        </member>
+        <member name="P:MV.DotNet.WPF.MVPlayer.MVPlayer.RenderMode">
+            <summary>
+            Gets or sets player render mode.\n
+            See enumeration description for more details.\n
+            This is dependency property.
+            </summary>
+        </member>
+        <member name="P:MV.DotNet.WPF.MVPlayer.MVPlayer.SizeMode">
+            <summary>
+            Gets or sets video size mode.\n
+            This is dependency property.
+            </summary>
+        </member>
+        <member name="P:MV.DotNet.WPF.MVPlayer.MVPlayer.DecodingType">
+            <summary>
+            Gets or sets player decoding mode.\n
+            See enumeration description for more informations.\n
+            This is dependency property.
+            </summary>
+        </member>
+        <member name="P:MV.DotNet.WPF.MVPlayer.MVPlayer.MediaState">
+            <summary>
+            Gets player current media state.\n
+            This is dependency property.
+            </summary>
+        </member>
+        <member name="P:MV.DotNet.WPF.MVPlayer.MVPlayer.PositionChangedStep">
+            <summary>
+            Defines ppsition change step.\n
+            It defines period of time in seconds between media state changed events.\n
+            Than higher than media position change events are fired less frequently.\n
+            This is dependency property.
+            </summary>
+        </member>
+        <member name="P:MV.DotNet.WPF.MVPlayer.MVPlayer.MediaPosition">
+            <summary>
+            Gets current media position in seconds.\n
+            This is dependency property.
+            </summary>
+        </member>
+        <member name="P:MV.DotNet.WPF.MVPlayer.MVPlayer.MediaDuration">
+            <summary>
+            Gets media duration in seconds.\n
+            This is dependency property.
+            </summary>
+        </member>
+        <member name="P:MV.DotNet.WPF.MVPlayer.MVPlayer.HasVideo">
+            <summary>
+            Returns true if media contains video stream.
+            </summary>
+        </member>
+        <member name="P:MV.DotNet.WPF.MVPlayer.MVPlayer.HasAudio">
+            <summary>
+            Returns true if media contains audio stream.
+            </summary>
+        </member>
+        <member name="P:MV.DotNet.WPF.MVPlayer.MVPlayer.VideoWidth">
+            <summary>
+            Returns video width.
+            </summary>
+        </member>
+        <member name="P:MV.DotNet.WPF.MVPlayer.MVPlayer.VideoHeight">
+            <summary>
+            Returns video height.
+            </summary>
+        </member>
+        <member name="P:MV.DotNet.WPF.MVPlayer.MVPlayer.HasOpenSubtitles">
+            <summary>
+            Returns if media has open subtitles.
+            </summary>
+        </member>
+        <member name="M:MV.DotNet.WPF.MVPlayer.MVPlayer.OpenMedia(System.String)">
+            <summary>
+            Opens media.\n
+            Wait for proper state following media state change event.
+            </summary>
+            <param name="PathOrUrl">It can be path to file or stream address.</param>
+        </member>
+        <member name="M:MV.DotNet.WPF.MVPlayer.MVPlayer.OpenMedia(System.String,System.Int32,System.Int32)">
+            <summary>
+            Opens media.\n
+            Wait for proper state following media state change event.
+            </summary>
+            <param name="PathOrUrl">It can be path to file or stream address</param>
+            <param name="packetsBufferSize">Defines size of demuxer buffer.</param>
+            <param name="framesBufferSize">Defines size of frames buffer.</param>
+        </member>
+        <member name="M:MV.DotNet.WPF.MVPlayer.MVPlayer.OpenSubtitles(System.String)">
+            <summary>
+            Opens susbtitles at given path.
+            Supported formats: SubRip(srt), MicroDVD, MPL2
+            </summary>
+            <param name="PathOrUrl"></param>
+        </member>
+        <member name="M:MV.DotNet.WPF.MVPlayer.MVPlayer.CloseSubtitles">
+            <summary>
+            Closes susbtitle service.
+            </summary>
+        </member>
+        <member name="M:MV.DotNet.WPF.MVPlayer.MVPlayer.Play">
+            <summary>
+            Starts playback.
+            </summary>
+        </member>
+        <member name="M:MV.DotNet.WPF.MVPlayer.MVPlayer.Pause">
+            <summary>
+            Pauses playback.
+            </summary>
+        </member>
+        <member name="M:MV.DotNet.WPF.MVPlayer.MVPlayer.Stop">
+            <summary>
+            Stops playback.
+            </summary>
+        </member>
+        <member name="M:MV.DotNet.WPF.MVPlayer.MVPlayer.Close">
+            <summary>
+            Closes media resources and releases memory.\
+            Warning! Call release method to fully free memory when control is not needed anymore.
+            </summary>
+        </member>
+        <member name="M:MV.DotNet.WPF.MVPlayer.MVPlayer.Release">
+            <summary>
+            Closes source and releases all native resources.
+            </summary>
+        </member>
+        <member name="M:MV.DotNet.WPF.MVPlayer.MVPlayer.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:MV.WPF.MVPlayer.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:MV.WPF.MVPlayer.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:MV.WPF.MVPlayer.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+    </members>
+</doc>
