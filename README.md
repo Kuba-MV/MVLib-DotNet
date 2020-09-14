@@ -19,7 +19,7 @@ Developers who want to incorporate media playback features into their applicatio
 4. Perfect video playback without frame skipping and stuttering.
 5. Production quality, no memory leaks and amazing stability.
 6. Very easy to use, you just need few lines of code to build amazing media playback application
-7. its totally free of charge for academi, personal or commercial use
+7. Its totally free of charge for academic, personal or commercial use
 8. Support for subtitles.
 
 Media Vault Library for DotNet is production quality set of controls designed to provide media playback for your applications.
