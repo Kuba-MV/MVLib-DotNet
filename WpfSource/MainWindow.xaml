@@ -1,0 +1,51 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mv="clr-namespace:MV.DotNet.WPF.MVPlayer;assembly=MV.WPF.MVPlayer" 
+        x:Class="MV.WPF.PlayerSample.MainWindow"
+        mc:Ignorable="d"
+        Title="MV WPF Media Player" 
+        Height="720" Width="1280" 
+        Closed="Window_Closed"
+        >
+    <Window.Resources>
+
+    </Window.Resources>
+    <Grid Name="grdMain">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <mv:MVPlayer Name="mvPlayer" Grid.Row="0" PositionChangedStep="0.2" MouseDoubleClick="MvPlayer_MouseDoubleClick" RenderMode="Composition"/>
+        <StackPanel Name="stackSubtitles" Grid.Row="0"  VerticalAlignment="Bottom">
+            <TextBlock  Name="subLine4" Foreground="White" FontSize="36" Background="#4C000000" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <TextBlock  Name="subLine3" Foreground="White" FontSize="36" Background="#4C000000" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <TextBlock  Name="subLine2" Foreground="White" FontSize="36" Background="#4C000000" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <TextBlock  Name="subLine1" Foreground="White" FontSize="36" Background="#4C000000" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </StackPanel>
+        <Slider x:Name="sliderPosition" IsEnabled="False" HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Center" 
+                Thumb.DragCompleted="SliderPosition_DragCompleted" ValueChanged="SliderPosition_ValueChanged"
+                Thumb.DragStarted="SliderPosition_DragStarted"/>
+        <Button x:Name="btnOpen" Content="Open Media" HorizontalAlignment="Left" Margin="19,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="85" RenderTransformOrigin="-0.453,3.4" Height="30" Click="BtnOpen_Click"/>
+        <Button x:Name="btnPlay" Content="Play" HorizontalAlignment="Left" Margin="124,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="85" RenderTransformOrigin="-0.453,3.4" Height="30" Click="BtnPlay_Click"/>
+        <TextBlock x:Name="txtDecodingType" HorizontalAlignment="Left" Margin="849,20,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Decoding Type" VerticalAlignment="Top" RenderTransformOrigin="0.449,1.812"/>
+        <ComboBox x:Name="cmbDecodingType" Grid.Row="2" Height="25" Margin="944,15,48,10" SelectionChanged="CmbDecodingType_SelectionChanged"/>
+        <Button x:Name="btnPause" Content="Pause" HorizontalAlignment="Left" Margin="227,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="85" RenderTransformOrigin="-0.453,3.4" Height="30" Click="BtnPause_Click"/>
+        <Button x:Name="btnStop" Content="Stop" HorizontalAlignment="Left" Margin="335,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="85" RenderTransformOrigin="-0.453,3.4" Height="30" Click="BtnStop_Click"/>
+        <Button x:Name="btnClose" Content="Close" HorizontalAlignment="Left" Margin="438,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="85" RenderTransformOrigin="-0.453,3.4" Height="30" Click="BtnClose_Click"/>
+        <Button x:Name="btnOpenSUb" Content="Open Subtitles" HorizontalAlignment="Left" Margin="538,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="85" RenderTransformOrigin="-0.453,3.4" Height="30" Click="BtnOpenSUb_Click"/>
+        <TextBlock x:Name="txtPlayerStateDesc" HorizontalAlignment="Left" Margin="19,10,0,0" Grid.Row="3" TextWrapping="Wrap" Text="Player state: " VerticalAlignment="Top"/>
+        <TextBlock x:Name="txtPlayerState" HorizontalAlignment="Left" Margin="84,10,0,0" Grid.Row="3" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <Slider x:Name="sliderVolume" HorizontalAlignment="Left" Minimum="0" Maximum="100" Margin="701,17,0,0" Grid.Row="2" VerticalAlignment="Top" Width="120" ValueChanged="SliderVolume_ValueChanged"/>
+        <TextBlock x:Name="txtVolume" HorizontalAlignment="Left" Margin="645,17,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Volume" VerticalAlignment="Top"/>
+        <TextBlock x:Name="txtPositionDesc" HorizontalAlignment="Left" Margin="187,10,0,0" Grid.Row="3" TextWrapping="Wrap" Text="Position: " VerticalAlignment="Top"/>
+        <TextBlock x:Name="txtPosition" HorizontalAlignment="Left" Margin="240,10,0,0" Grid.Row="3" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <TextBlock x:Name="txtMediaSize" HorizontalAlignment="Left" Margin="372,13,0,0" Grid.Row="3" TextWrapping="Wrap" Text="Media size: " VerticalAlignment="Top"/>
+        <TextBlock x:Name="txtSizeMode" HorizontalAlignment="Left" Margin="849,20,0,0" Grid.Row="3" TextWrapping="Wrap" Text="Size Mode" VerticalAlignment="Top" RenderTransformOrigin="0.449,1.812"/>
+        <ComboBox x:Name="cmbSizeMode" Grid.Row="3" Height="25" Margin="944,15,48,10" SelectionChanged="CmbSizeMode_SelectionChanged"/>
+    </Grid>
+</Window>
