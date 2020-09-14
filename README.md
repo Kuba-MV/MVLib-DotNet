@@ -17,7 +17,7 @@ Developers who want to incorporate media playback features into their applicatio
 2. No need to use additional codecs.
 3. Ultra fast hardware and software decoding of pretty much all known media formats.
 4. Perfect video playback without frame skipping and stuttering.
-5. Production quiality, no memory leaks and amazing stability.
+5. Production quality, no memory leaks and amazing stability.
 6. Very easy to use, you just need few lines of code to build amazing media playback application
 7. its totally free of charge for academi, personal or commercial use
 8. Support for subtitles.
