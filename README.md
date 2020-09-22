@@ -77,7 +77,7 @@ Every sample project is configured to compile and start to work out of the box. 
 
 ## DirectX ##
 
-[Download SharpDX sample](https://bitbucket.org/MV_Kuba/mediavaultlibdotnet/downloads/MV.SharpDX.Sample.1.0.0.1.zip)
+[Download SharpDX sample](https://github.com/Kuba-MV/MVLib-DotNet/releases/download/v1.0.0.1s_SharpDX/MVLib.DotNet.SharpDX.Sample.1.0.0.1.zip)
 
 # Media Vault Library for WinForms #
 
@@ -156,4 +156,4 @@ Media Vault Library for DirectX is sample how to incorporate movies into your ga
 
 ## How to get ##
 
-[Download SharpDX sample](https://bitbucket.org/MV_Kuba/mediavaultlibdotnet/downloads/MV.SharpDX.Sample.1.0.0.1.zip)
+[Download SharpDX sample](https://github.com/Kuba-MV/MVLib-DotNet/releases/download/v1.0.0.1s_SharpDX/MVLib.DotNet.SharpDX.Sample.1.0.0.1.zip)
