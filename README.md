@@ -140,7 +140,7 @@ In our opinion is much better option than standard MediaElement control in WPF t
 
 [Download WPF sample](https://bitbucket.org/MV_Kuba/mediavaultlibdotnet/downloads/MV.WPF.Sample.1.0.0.1.zip)
 
-[Binaries distribution](https://bitbucket.org/MV_Kuba/mediavaultlibdotnet/downloads/MV.WPF.1.0.0.1.zip)
+[Binaries distribution](https://github.com/Kuba-MV/MVLib-DotNet/releases/download/v1.0.0.1_WPF/MVLib.DotNet.WPF.Binaries.1.0.0.1.zip)
 
 # Media Vault Library for DirectX #
 
