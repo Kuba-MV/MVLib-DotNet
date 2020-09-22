@@ -105,7 +105,7 @@ Media Vault Library for WinForms is easy to use media control which will allow y
 
 [Download WinForms sample](https://bitbucket.org/MV_Kuba/mediavaultlibdotnet/downloads/MV.WinForms.Sample.1.0.0.1.zip)
 
-[Binaries distribution](https://bitbucket.org/MV_Kuba/mediavaultlibdotnet/downloads/MV.WinForms.1.0.0.1.zip)
+[Binaries distribution](https://github.com/Kuba-MV/MVLib-DotNet/releases/download/v1.0.0.1/MVLib.DotNet.WinForms.1.0.0.1_binaries.zip)
 
 # Media Vault Library for WPF #
 
