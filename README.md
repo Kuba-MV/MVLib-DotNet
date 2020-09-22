@@ -67,7 +67,7 @@ Every sample project is configured to compile and start to work out of the box. 
 
 ## Win Forms ##
 
-[Download WinForms sample](https://github.com/Kuba-MV/MVLib-DotNet/releases/download/v1.0.0.1s/MVLib.DotNet.WinForms.Sample.1.0.0.1.zip)
+[Download WinForms sample](https://github.com/Kuba-MV/MVLib-DotNet/releases/download/v1.0.0.1s_WinForms/MVLib.DotNet.WinForms.Sample.1.0.0.1.zip)
 
 ## WPF ##
 
