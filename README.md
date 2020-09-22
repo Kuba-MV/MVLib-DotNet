@@ -2,6 +2,8 @@
 
 Multimedia Player for WinForms, WPF and SharpDX based on FFMPEG
 
+FFMPEG; DotNet; WPF; WinForms; SharpDX; Video player; Audio Player;
+
 Full media playback for DotNet developers is finally here!
 
 Because we still believe WinForms, WPF and managed DirectX is still alive, we decided to create robust media playback controls and libraries for you.
