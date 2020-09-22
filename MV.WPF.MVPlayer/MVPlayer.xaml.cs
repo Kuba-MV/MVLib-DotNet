@@ -93,7 +93,7 @@ namespace MV.DotNet.WPF.MVPlayer
                 }
 
                 if (mvlibWrapperType == null)
-                    throw new InvalidOperationException("Unable to find MVLibWrapper class in loaded assemblies! Check if you dependencies are correct!\nPlease visit https://bitbucket.org/MV_Kuba/mediavaultlibdotnet/wiki/Downloads if you need to download additional dependencies!");
+                    throw new InvalidOperationException("Unable to find MVLibWrapper class in loaded assemblies! Check if you dependencies are correct!\nPlease visit https://github.com/Kuba-MV/MVLib-DotNet if you need to download additional dependencies!");
 
                 _media_wrapper = Activator.CreateInstance(mvlibWrapperType);
 
