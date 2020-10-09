@@ -31,6 +31,7 @@
             this.btnOpenMedia = new System.Windows.Forms.Button();
             this.btnPlay = new System.Windows.Forms.Button();
             this.pnDown = new System.Windows.Forms.Panel();
+            this.btnOpenSubtitles = new System.Windows.Forms.Button();
             this.lblMediaSizeData = new System.Windows.Forms.Label();
             this.lblMediaSize = new System.Windows.Forms.Label();
             this.cmbRenderMode = new System.Windows.Forms.ComboBox();
@@ -52,7 +53,6 @@
             this.mvPlayer1 = new MV.DotNet.WinForms.MVPlayer.MVPlayer();
             this.pnSlider = new System.Windows.Forms.Panel();
             this.tbPosition = new System.Windows.Forms.TrackBar();
-            this.btnOpenSubtitles = new System.Windows.Forms.Button();
             this.pnDown.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbVolume)).BeginInit();
             this.pnMiddle.SuspendLayout();
@@ -109,6 +109,17 @@
             this.pnDown.Name = "pnDown";
             this.pnDown.Size = new System.Drawing.Size(1264, 151);
             this.pnDown.TabIndex = 4;
+            // 
+            // btnOpenSubtitles
+            // 
+            this.btnOpenSubtitles.Location = new System.Drawing.Point(546, 17);
+            this.btnOpenSubtitles.Margin = new System.Windows.Forms.Padding(1);
+            this.btnOpenSubtitles.Name = "btnOpenSubtitles";
+            this.btnOpenSubtitles.Size = new System.Drawing.Size(93, 41);
+            this.btnOpenSubtitles.TabIndex = 22;
+            this.btnOpenSubtitles.Text = "Open subtitles";
+            this.btnOpenSubtitles.UseVisualStyleBackColor = true;
+            this.btnOpenSubtitles.Click += new System.EventHandler(this.btnOpenSubtitles_Click);
             // 
             // lblMediaSizeData
             // 
@@ -316,17 +327,6 @@
             this.tbPosition.SmallChange = 50;
             this.tbPosition.TabIndex = 0;
             this.tbPosition.Scroll += new System.EventHandler(this.tbPosition_Scroll);
-            // 
-            // btnOpenSubtitles
-            // 
-            this.btnOpenSubtitles.Location = new System.Drawing.Point(546, 17);
-            this.btnOpenSubtitles.Margin = new System.Windows.Forms.Padding(1);
-            this.btnOpenSubtitles.Name = "btnOpenSubtitles";
-            this.btnOpenSubtitles.Size = new System.Drawing.Size(93, 41);
-            this.btnOpenSubtitles.TabIndex = 22;
-            this.btnOpenSubtitles.Text = "Open subtitles";
-            this.btnOpenSubtitles.UseVisualStyleBackColor = true;
-            this.btnOpenSubtitles.Click += new System.EventHandler(this.btnOpenSubtitles_Click);
             // 
             // frmMain
             // 

@@ -39,6 +39,7 @@ namespace MV.WinForms.PlayerSample
         bool setupSlider = false;
         DateTime lastSeekOperation = DateTime.Now;
 
+        private string currentFileName = string.Empty;
 
         public frmMain()
         {
@@ -91,6 +92,20 @@ namespace MV.WinForms.PlayerSample
 
         private void MvPlayer1_MediaStateChanged(object sender, MV_MediaStateChangedEventArgs e)
         {
+            //check if we are in MVAuto mode
+            //if so, we can use fallback if hw decoding will fail
+            if (mvPlayer1.MediaState == MV_PlayerStateEnum.Error && mvPlayer1.DecodingType == MV_DecodingTypeEnum.MV_Auto)
+            {
+                //close failed source
+                mvPlayer1.Close();
+
+                //change decoding type into sw yuv decoding
+                //mvPlayer1.DecodingType = MV_DecodingTypeEnum.MV_YUV420P;
+                cmbDecodingType.SelectedIndex = (int)MV_DecodingTypeEnum.MV_YUV420P;
+
+                mvPlayer1.OpenMediaAsync(currentFileName);
+            }
+
             lblPlayerState.Text = mvPlayer1.MediaState.ToString();
 
             if (e.State != MV_PlayerStateEnum.Error &&
@@ -137,6 +152,8 @@ namespace MV.WinForms.PlayerSample
 
             if (ofd.ShowDialog() != DialogResult.OK)
                 return;
+
+            currentFileName = ofd.FileName;
 
             mvPlayer1.OpenMedia(ofd.FileName);
             ofd.Dispose();
