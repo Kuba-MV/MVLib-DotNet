@@ -48,6 +48,8 @@ namespace MV.WPF.PlayerSample
 
         bool _hold_position_updated = true;
 
+        private string currentMediaFile = string.Empty;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -159,6 +161,20 @@ namespace MV.WPF.PlayerSample
 
         private void MvPlayer_MediaStateChanged(object sender, MV_MediaStateChangedEventArgs e)
         {
+            //check if we are in MVAuto mode
+            //if so, we can use fallback if hw decoding will fail
+            if (mvPlayer.MediaState == MV_PlayerStateEnum.Error && mvPlayer.DecodingType == MV_DecodingTypeEnum.MV_Auto)
+            {
+                //close failed source
+                mvPlayer.Close();
+
+                //change decoding type into sw yuv decoding
+                //mvPlayer1.DecodingType = MV_DecodingTypeEnum.MV_YUV420P;
+                cmbDecodingType.SelectedIndex = (int)MV_DecodingTypeEnum.MV_YUV420P;
+
+                mvPlayer.OpenMedia(currentMediaFile);
+            }
+
             txtPlayerState.Text = mvPlayer.MediaState.ToString();
 
             if (e.State != MV_PlayerStateEnum.Error &&
@@ -206,6 +222,7 @@ namespace MV.WPF.PlayerSample
 
             if (result == true)
             {
+                currentMediaFile = ofd.FileName;
                 mvPlayer.OpenMedia(ofd.FileName);
             }
 
