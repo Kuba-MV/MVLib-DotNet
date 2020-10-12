@@ -69,11 +69,11 @@ Every sample project is configured to compile and start to work out of the box. 
 
 ## Win Forms ##
 
-[Download WinForms sample](https://github.com/Kuba-MV/MVLib-DotNet/releases/download/v1.0.0.1s_WinForms/MVLib.DotNet.WinForms.Sample.1.0.0.1.zip)
+[Download WinForms sample](https://github.com/Kuba-MV/MVLib-DotNet/releases/download/v1.0.0.2s_WinForms/MVLib.DotNet.WinForms.Sample.1.0.0.2.zip)
 
 ## WPF ##
 
-[Download WPF sample](https://github.com/Kuba-MV/MVLib-DotNet/releases/download/v1.0.0.1s_WPF/MVLib.DotNet.WPF.Sample.1.0.0.1.zip)
+[Download WPF sample](https://github.com/Kuba-MV/MVLib-DotNet/releases/download/v1.0.0.2s_WPF/MVLib.DotNet.WPF.Sample.1.0.0.2.zip)
 
 ## DirectX ##
 
@@ -105,9 +105,9 @@ Media Vault Library for WinForms is easy to use media control which will allow y
 
 ## How to get ##
 
-[Download WinForms sample](https://github.com/Kuba-MV/MVLib-DotNet/releases/download/v1.0.0.1s_WinForms/MVLib.DotNet.WinForms.Sample.1.0.0.1.zip)
+[Download WinForms sample](https://github.com/Kuba-MV/MVLib-DotNet/releases/download/v1.0.0.2s_WinForms/MVLib.DotNet.WinForms.Sample.1.0.0.2.zip)
 
-[Binaries distribution](https://github.com/Kuba-MV/MVLib-DotNet/releases/download/v1.0.0.1_WinForms/MVLib.DotNet.WinForms.1.0.0.1_binaries.zip)
+[Binaries distribution](https://github.com/Kuba-MV/MVLib-DotNet/releases/download/v1.0.0.2_WinForms/MVLib.DotNet.WinForms.1.0.0.2_binaries.zip)
 
 # Media Vault Library for WPF #
 
@@ -138,9 +138,9 @@ In our opinion is much better option than standard MediaElement control in WPF t
 
 ## How to get ##
 
-[Download WPF sample](https://github.com/Kuba-MV/MVLib-DotNet/releases/download/v1.0.0.1s_WPF/MVLib.DotNet.WPF.Sample.1.0.0.1.zip)
+[Download WPF sample](https://github.com/Kuba-MV/MVLib-DotNet/releases/download/v1.0.0.2s_WPF/MVLib.DotNet.WPF.Sample.1.0.0.2.zip)
 
-[Binaries distribution](https://github.com/Kuba-MV/MVLib-DotNet/releases/download/v1.0.0.1_WPF/MVLib.DotNet.WPF.Binaries.1.0.0.1.zip)
+[Binaries distribution](https://github.com/Kuba-MV/MVLib-DotNet/releases/download/v1.0.0.2_WPF/MVLib.DotNet.WPF.Binaries.1.0.0.2.zip)
 
 # Media Vault Library for DirectX #
 
